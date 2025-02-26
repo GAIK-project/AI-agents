@@ -1,0 +1,12 @@
+{
+  "name": "structured-data-agent",
+  "version": "0.1.0",
+  "description": "LangGraph agent that extracts structured data from user input using schemas",
+  "dependencies": ["."],
+  "graphs": {
+    "agent": "./src/graph.py:graph"
+  },
+  "python": {
+    "python_path": ".venv\\Scripts\\python.exe"
+  }
+}
