@@ -129,7 +129,7 @@ export default function ChatInterface() {
         {
           role: "assistant",
           content:
-            "Pahoittelut, keskustelussa tapahtui virhe. Yritä uudelleen.",
+            "Sorry, an error occurred during the conversation. Please try again.",
           sender: currentAgent,
         },
       ]);
@@ -173,19 +173,19 @@ export default function ChatInterface() {
    * Shows prompt dialogs for entering information
    */
   const updateUserInfo = () => {
-    const newName = prompt("Syötä nimesi:", userName);
+    const newName = prompt("Enter your name:", userName);
     if (newName) setUserName(newName);
 
-    const newLocation = prompt("Syötä sijaintisi:", location || "");
+    const newLocation = prompt("Enter your location:", location || "");
     if (newLocation) setLocation(newLocation);
 
     setMessages((prev) => [
       ...prev,
       {
         role: "system",
-        content: `Käyttäjätiedot päivitetty: ${
-          newName || userName
-        } sijainnista ${newLocation || location || "tuntematon"}`,
+        content: `User information updated: ${newName || userName} from ${
+          newLocation || location || "unknown"
+        }`,
       },
     ]);
   };
@@ -209,7 +209,7 @@ export default function ChatInterface() {
       {/* Header */}
       <div className="bg-blue-600 text-white p-4 rounded-t-lg">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold">Swarm Agentti Chat</h1>
+          <h1 className="text-xl font-bold">Swarm Agent Chat</h1>
           <div className="flex items-center space-x-2">
             <span className="text-sm">
               {getAgentIcon(currentAgent)}{" "}
@@ -219,13 +219,13 @@ export default function ChatInterface() {
               onClick={updateUserInfo}
               className="bg-white text-blue-600 px-3 py-1 rounded-md text-sm font-medium hover:bg-blue-100"
             >
-              Päivitä tiedot
+              Update info
             </button>
           </div>
         </div>
         <div className="text-sm mt-1">
-          Käyttäjä: {userName}
-          {location && ` sijainnista ${location}`}
+          User: {userName}
+          {location && ` from ${location}`}
         </div>
       </div>
 
@@ -233,16 +233,17 @@ export default function ChatInterface() {
       <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
         {messages.length === 0 ? (
           <div className="text-center text-gray-500 mt-8">
-            <p>Tervetuloa keskustelemaan Swarm-agenttien kanssa!</p>
-            <p className="mt-2">Voit kokeilla näitä:</p>
+            <p>Welcome to chat with Swarm agents!</p>
+            <p className="mt-2">Try these:</p>
             <ul className="mt-2 list-disc list-inside">
-              <li>Yleisiä kysymyksiä (Assistant)</li>
+              <li>General questions (Assistant)</li>
               <li>
-                Sano "Hei" tai "Moi" tai sano "Puhutaan suomeksi" (Finnish
-                Agent)
+                Say "Hello" or "Hi", or say "Let's speak Finnish" (Finnish Agent)
               </li>
-              <li>Kysy "Millainen sää on?" (Weather Expert)</li>
-              <li>Voit pyytää "Palaa takaisin" palataksesi pääagenttiin</li>
+              <li>Ask "What is the weather like?" (Weather Expert)</li>
+              <li>
+                You can request "Go back" to return to the main agent
+              </li>
             </ul>
           </div>
         ) : (
@@ -284,7 +285,7 @@ export default function ChatInterface() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Kirjoita viestisi..."
+            placeholder="Type your message..."
             className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           />
@@ -293,7 +294,7 @@ export default function ChatInterface() {
             disabled={loading}
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-blue-300"
           >
-            {loading ? "Lähetetään..." : "Lähetä"}
+            {loading ? "Sending..." : "Send"}
           </button>
         </div>
       </div>
