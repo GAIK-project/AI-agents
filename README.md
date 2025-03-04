@@ -22,23 +22,10 @@ poetry install
 poetry env activate
 
 # On Windows PowerShell, execute the displayed command:
-# & "C:\hh-tyo\gaik\AI-agents\.venv\Scripts\Activate.ps1"
+# & "C:\your-folder\folder\AI-agents\.venv\Scripts\Activate.ps1"
 
-# Alternatively, run commands without activating the environment
+# Alternatively, run commands without activating the environment ("poetry run" prefix allows us run commands in virtual env) 
 poetry run python swarms/openai_swarm/main.py
-```
-
-You can also use other Poetry commands:
-
-```bash
-# Add a new dependency
-poetry add requests
-
-# Update dependencies
-poetry update
-
-# Show installed packages
-poetry show
 ```
 
 For a complete list of Poetry commands and options, refer to the [Poetry CLI documentation](https://python-poetry.org/docs/cli/).
