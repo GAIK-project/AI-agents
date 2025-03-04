@@ -1,0 +1,2 @@
+smolagents>=1.9.2
+litellm>=1.62.1,<2.0.0

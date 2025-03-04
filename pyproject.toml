@@ -16,7 +16,9 @@ dependencies = [
     "python-dotenv (>=1.0.0)",
     "swarm @ git+https://github.com/openai/swarm.git",
     "fastapi (>=0.115.8)",
-    "uvicorn (>=0.34.0)"
+    "uvicorn (>=0.34.0)",
+    "litellm (>=1.62.1,<2.0.0)",
+    "smolagents (>=1.9.2,<2.0.0)"
 ]
 
 [tool.poetry]
