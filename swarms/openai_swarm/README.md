@@ -2,9 +2,9 @@
 
 ## Overview
 
-Swarm is an experimental, educational framework developed by OpenAI for exploring ergonomic, lightweight multi-agent orchestration. It provides a clean, intuitive interface for building and coordinating multiple AI agents.
+Swarm is an experimental, educational framework developed by OpenAI for exploring lightweight multi-agent orchestration. It provides an intuitive interface for building and coordinating multiple AI agents through simple primitives.
 
-> **Warning**: Swarm is currently experimental and intended for educational purposes. It is not designed for production use and has no official support.
+> **Warning**: Swarm is currently experimental and intended for educational purposes. It is not designed for production use.
 
 ## Core Features
 
@@ -17,47 +17,57 @@ Swarm is an experimental, educational framework developed by OpenAI for explorin
 ## Basic Usage
 
 ```python
-from swarm import Swarm, Agent
+from dotenv import load_dotenv
+from swarm import Agent, Swarm
+
+# Load environment variables
+load_dotenv()
 
 # Initialize client
 client = Swarm()
 
-# Define agent transfer function
-def transfer_to_agent_b():
-    return agent_b
+# Define an agent transfer function
+def transfer_to_weather():
+    """Transfer the conversation to the weather agent."""
+    return weather_agent
 
-# Create agents
-agent_a = Agent(
-    name="Agent A",
-    instructions="You are a helpful agent.",
-    functions=[transfer_to_agent_b],
+# Create main assistant agent
+main_agent = Agent(
+    name="Assistant",
+    model="gpt-4o",
+    instructions=lambda context_variables: f"""You are a helpful assistant.
+If the user asks about weather information, transfer to the weather agent.
+Current user: {context_variables.get('user_name', 'Unknown')}""",
+    functions=[transfer_to_weather]
 )
 
-agent_b = Agent(
-    name="Agent B",
-    instructions="Only speak in Haikus.",
+# Define a function for the weather agent
+def get_weather(location=None):
+    """Get weather information for a location."""
+    if not location:
+        location = "Helsinki"
+
+    weather_data = {
+        "New York": "Sunny, 75°F",
+        "Helsinki": "Snow, 25°F (-4°C)",
+    }
+
+    return f"The current weather in {location} is: {weather_data.get(location, 'unavailable')}"
+
+# Create weather agent
+weather_agent = Agent(
+    name="Weather Expert",
+    model="gpt-4o",
+    instructions="You are a weather expert who helps users find weather information.",
+    functions=[get_weather]
 )
 
-# Run conversation
+# Run a conversation
 response = client.run(
-    agent=agent_a,
-    messages=[{"role": "user", "content": "I want to talk to agent B."}],
+    agent=main_agent,
+    messages=[{"role": "user", "content": "What's the weather in New York?"}],
+    context_variables={"user_name": "Alex"}
 )
-```
-
-## Why Use Swarm?
-
-Swarm is ideal for situations dealing with multiple specialized capabilities that would be difficult to encode in a single prompt. The framework allows for:
-
-- Building networks of specialized agents
-- Defining clean workflows with explicit handoffs
-- Maintaining control over conversation state
-- Testing and evaluating multi-agent systems
-
-## Installation
-
-```bash
-pip install git+https://github.com/openai/swarm.git
 ```
 
 ## Requirements
