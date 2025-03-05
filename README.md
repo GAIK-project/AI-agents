@@ -24,7 +24,7 @@ poetry env activate
 # On Windows PowerShell, execute the displayed command:
 # & "C:\your-folder\folder\AI-agents\.venv\Scripts\Activate.ps1"
 
-# Alternatively, run commands without activating the environment ("poetry run" prefix allows us run commands in virtual env) 
+# Alternatively, run commands without activating the environment ("poetry run" prefix allows us run commands in virtual env)
 poetry run python swarms/openai_swarm/main.py
 ```
 
@@ -82,3 +82,7 @@ poetry run uvicorn <agent_folder>.app:app --reload
 # Example
 poetry run uvicorn swarms.openai_swarm.app:app --reload
 ```
+
+## License
+
+MIT
