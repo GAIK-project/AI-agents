@@ -21,7 +21,8 @@ dependencies = [
     "smolagents (>=1.9.2,<2.0.0)",
     "pydantic-ai (>=0.0.32,<0.0.33)",
     "pydantic-graph (>=0.0.32,<0.0.33)",
-    "asyncpg (>=0.30.0,<0.31.0)"
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "langgraph-swarm (>=0.0.5,<0.0.6)"
 ]
 
 [tool.poetry]
