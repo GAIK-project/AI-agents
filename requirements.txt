@@ -10,3 +10,4 @@ uvicorn>=0.34.0
 smolagents>=1.9.2
 pydantic-ai>=0.0.32,<0.0.33
 pydantic-graph>=0.0.32,<0.0.33
+asyncpg>=0.30.0,<0.31.0
