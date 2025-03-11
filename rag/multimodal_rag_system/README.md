@@ -4,6 +4,7 @@ This script implements a multimodal retrieval-augmented generation (RAG) system
 using IBM's Docling and Granite models to process and analyze PDF documents.
 
 The system performs the following steps:
+
 1. Processes PDF documents using Docling to extract text, tables, and images
 2. Processes images using IBM Granite Vision to extract text and content
 3. Creates vector embeddings of all content using IBM Granite Embeddings
@@ -11,12 +12,22 @@ The system performs the following steps:
 5. Creates a RAG pipeline using IBM Granite language model
 6. Answers user queries based on the document content
 
+## Setup
+
+1. Clone the repository
+2. Rename `.env.example` to `.env` and add your Replicate API token:
+   ```
+   cp .env.example .env
+   ```
+3. Edit the `.env` file and replace `your_replicate_api_token_here` with your actual Replicate API token
+4. Install dependencies using Poetry or pip (see below)
+
 ## Usage
 
 ```bash
 # Basic usage - uses existing database if available
 python main.py
-    
+
 # Force reprocessing of documents even if database exists
 python main.py --force-reprocess
 ```
@@ -36,6 +47,7 @@ The system stores processed documents in a ChromaDB vector database in the `data
 ## Based on IBM Tutorial
 
 This implementation is based on the IBM Granite tutorial for building a multimodal RAG system:
+
 - [IBM Tutorial: Build an AI-powered multimodal RAG system with Docling and Granite](https://www.ibm.com/think/tutorials/build-multimodal-rag-langchain-with-docling-granite)
 - [GitHub: Granite Snack Cookbook - Multimodal RAG Recipe](https://github.com/ibm-granite-community/granite-snack-cookbook/blob/main/recipes/RAG/Granite_Multimodal_RAG.ipynb)
 
