@@ -31,6 +31,12 @@ dependencies = [
     "replicate>=0.22.0",
     "ibm-granite-community-utils @ git+https://github.com/ibm-granite-community/utils.git",
     "chromadb (>=0.6.3,<0.7.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "pgvector (>=0.3.6,<0.4.0)",
+    "langchain (>=0.3.20,<0.4.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "psycopg (>=3.2.5,<4.0.0)",
+    "langchain-postgres (>=0.0.13,<0.0.14)",
 ]
 
 [tool.poetry]
