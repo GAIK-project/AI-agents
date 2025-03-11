@@ -83,16 +83,16 @@ def main():
         
         logger.info(f"Executing filtered query: {filter_condition}")
         
-        filtered_results = vector_db.similarity_search(
+        results_with_scores  = vector_db.similarity_search_with_score(
             query, 
             k=4,  # Maximum number of results to return
             filter=filter_condition  # Apply our filter
         )
         
         print("\nFiltered Search Results (category=Databases AND difficulty=beginner):")
-        for i, doc in enumerate(filtered_results):
-            print(f"\nResult {i+1}:")
+        for doc, score in results_with_scores:
             print(f"Content: {doc.page_content}")
+            print(f"Similarity score: {score}")
             print(f"Metadata: {doc.metadata}")
             print("-" * 50)
 
