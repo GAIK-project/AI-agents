@@ -8,21 +8,29 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13,<4.0"
 dependencies = [
-    "langgraph (>=0.0.36)",
-    "langchain-core (>=0.1.0)",
-    "langchain-openai (>=0.0.1)",
-    "typing-extensions (>=4.5.0)",
-    "pydantic (>=2.0.0)",
-    "python-dotenv (>=1.0.0)",
+    "langgraph>=0.0.36",
+    "langchain-core>=0.1.0",
+    "langchain-openai>=0.0.1",
+    "typing-extensions>=4.5.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
     "swarm @ git+https://github.com/openai/swarm.git",
-    "fastapi (>=0.115.8)",
-    "uvicorn (>=0.34.0)",
-    "litellm (>=1.62.1,<2.0.0)",
-    "smolagents (>=1.9.2,<2.0.0)",
-    "pydantic-ai (>=0.0.32,<0.0.33)",
-    "pydantic-graph (>=0.0.32,<0.0.33)",
-    "asyncpg (>=0.30.0,<0.31.0)",
-    "langgraph-swarm (>=0.0.5,<0.0.6)"
+    "fastapi>=0.115.8",
+    "uvicorn>=0.34.0",
+    "litellm>=1.62.1,<2.0.0",
+    "smolagents>=1.9.2,<2.0.0",
+    "pydantic-ai>=0.0.32,<0.0.33",
+    "pydantic-graph>=0.0.32,<0.0.33",
+    "asyncpg>=0.30.0,<0.31.0",
+    "langgraph-swarm>=0.0.5,<0.0.6",
+    "transformers>=4.35.0",
+    "pillow>=10.1.0",
+    "langchain-community>=0.0.16",
+    "langchain-huggingface>=0.0.1",
+    "docling>=1.0.0",
+    "replicate>=0.22.0",
+    "ibm-granite-community-utils @ git+https://github.com/ibm-granite-community/utils.git",
+    "chromadb (>=0.6.3,<0.7.0)",
 ]
 
 [tool.poetry]

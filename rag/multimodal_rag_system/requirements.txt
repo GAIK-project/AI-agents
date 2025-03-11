@@ -1,0 +1,10 @@
+transformers>=4.35.0
+pillow>=10.1.0
+langchain>=0.0.267
+langchain-community>=0.0.16
+langchain-huggingface>=0.0.1
+chromadb>=0.4.18
+docling @ git+https://github.com/IBM/docling.git
+replicate>=0.22.0
+python-dotenv>=1.0.0
+ibm-granite-community @ git+https://github.com/ibm-granite-community/utils.git
