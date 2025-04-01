@@ -8,13 +8,14 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13,<4.0"
 dependencies = [
-    "langgraph (>=0.0.36)",
-    "langchain-core (>=0.1.0)",
-    "langchain-openai (>=0.0.1)",
-    "typing-extensions (>=4.5.0)",
-    "pydantic (>=2.0.0)",
-    "python-dotenv (>=1.0.0)",
+    "langgraph>=0.0.36",
+    "langchain-core>=0.1.0",
+    "langchain-openai>=0.0.1",
+    "typing-extensions>=4.5.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
     "swarm @ git+https://github.com/openai/swarm.git",
+<<<<<<< HEAD
     "fastapi (>=0.115.8)",
     "uvicorn (>=0.34.0)",
     "litellm (>=1.62.1,<2.0.0)",
@@ -25,6 +26,32 @@ dependencies = [
     "langgraph-swarm (>=0.0.5,<0.0.6)",
     "mcp[cli] (>=1.6.0,<2.0.0)",
     "httpx (>=0.28.1,<0.29.0)"
+=======
+    "fastapi>=0.115.8",
+    "uvicorn>=0.34.0",
+    "litellm>=1.62.1,<2.0.0",
+    "smolagents>=1.9.2,<2.0.0",
+    "pydantic-ai>=0.0.32,<0.0.33",
+    "pydantic-graph>=0.0.32,<0.0.33",
+    "asyncpg>=0.30.0,<0.31.0",
+    "langgraph-swarm>=0.0.5,<0.0.6",
+    "transformers>=4.35.0",
+    "pillow>=10.1.0",
+    "langchain-community>=0.0.16",
+    "langchain-huggingface>=0.0.1",
+    "docling>=1.0.0",
+    "replicate>=0.22.0",
+    "ibm-granite-community-utils @ git+https://github.com/ibm-granite-community/utils.git",
+    "chromadb (>=0.6.3,<0.7.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "pgvector (>=0.3.6,<0.4.0)",
+    "langchain (>=0.3.20,<0.4.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "psycopg (>=3.2.5,<4.0.0)",
+    "langchain-postgres (>=0.0.13,<0.0.14)",
+    "supabase (>=2.14.0,<3.0.0)",
+    "openai (>=1.68.2,<2.0.0)",
+>>>>>>> d5594d925bf91b4e669f6f6e6116a4fe39677e83
 ]
 
 [tool.poetry]
