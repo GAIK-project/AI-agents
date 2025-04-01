@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "weather": {
+            "command": "C:\\Users\\h03068\\dev\\gaik\\AI-agents\\myenv\\Scripts\\python.exe",
+            "args": [
+                "C:\\Users\\h03068\\dev\\gaik\\AI-agents\\mcp\\weather.py"
+            ],
+            "cwd": "C:\\Users\\h03068\\dev\\gaik\\AI-agents\\mcp"
+        }
+    }
+}

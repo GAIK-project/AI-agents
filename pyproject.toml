@@ -22,7 +22,9 @@ dependencies = [
     "pydantic-ai (>=0.0.32,<0.0.33)",
     "pydantic-graph (>=0.0.32,<0.0.33)",
     "asyncpg (>=0.30.0,<0.31.0)",
-    "langgraph-swarm (>=0.0.5,<0.0.6)"
+    "langgraph-swarm (>=0.0.5,<0.0.6)",
+    "mcp[cli] (>=1.6.0,<2.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
 ]
 
 [tool.poetry]
