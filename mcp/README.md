@@ -113,3 +113,47 @@ Here are a few examples of different types:
 - [Model Context Protocol documentation](https://modelcontextprotocol.io/)
 - [Playwright MCP GitHub](https://github.com/microsoft/playwright-mcp)
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+
+## Playwright MCP Prompt Examples for Business Use
+
+### Legal & Compliance
+
+- "Search finlex.fi for recent changes to Finnish employment law"
+- "Find GDPR compliance requirements for Finnish businesses"
+- "Research environmental regulations for manufacturing companies in Finland"
+- "Find tax reporting deadlines for businesses in Finland this year"
+
+### Research & Market Analysis
+
+- "Check competitor product pricing and create a comparison report"
+- "Analyze digital healthcare trends in Nordic markets"
+- "Monitor currency exchange rates affecting our exports"
+- "Research public tender opportunities for our company"
+
+### Education & Training
+
+- "Find relevant IT training courses on opintopolku.fi for our development team"
+- "Check upcoming business administration programs at Haaga-Helia"
+- "Find continuing education options for healthcare professionals in Helsinki"
+- "Research available language courses for employees relocating to Finland"
+
+### Public Services & Information
+
+- "Check today's lunch menu at Compass Group's Opetustalo restaurant"
+- "Find business support services available through Business Finland"
+- "Research available funding opportunities for cleantech companies"
+- "Find the application process for startup grants in Helsinki"
+
+### Operations & Logistics
+
+- "Check current shipping delays between Finland and Germany"
+- "Find warehousing options near Helsinki port"
+- "Research suppliers of sustainable packaging in Finland"
+- "Monitor weather forecasts affecting shipment routes"
+
+### Customer & Market Research
+
+- "Gather customer reviews about our main product from Finnish forums"
+- "Research local consumer preferences for sustainable products"
+- "Check social media sentiment about our recent product launch"
+- "Analyze user reviews of similar products in the Finnish market"
