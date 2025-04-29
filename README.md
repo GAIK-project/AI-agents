@@ -6,29 +6,28 @@ This repository contains a collection of various Python-based AI agents implemen
 
 This repository uses [Poetry](https://python-poetry.org/) for dependency management. Poetry provides a modern way to manage Python packages with automatic dependency resolution and virtual environment management.
 
-### Using Poetry
+### Using UV
 
-Since the Poetry configuration is at the repository root level, all Poetry commands should be run from the main directory:
+[UV](https://github.com/astral-sh/uv) is an extremely fast Python package installer and resolver, written in Rust, designed as a drop-in replacement for `pip` and `pip-tools`. You can use it with Poetry projects as well.
+
+First, ensure you have `uv` installed. You can find installation instructions [here](https://github.com/astral-sh/uv#installation).
 
 ```bash
-# Install Poetry (if not already installed)
-curl -sSL https://install.python-poetry.org | python3 -
+# Create a virtual environment using uv
+uv venv
 
-# Install dependencies
-poetry install
+# Activate the environment
+# On Windows:
+.venv\Scripts\activate
+# On Unix/MacOS:
+source .venv/bin/activate
 
-# Get the activation command for your virtual environment
-# Note: This doesn't activate the environment, but shows the command to do so
-poetry env activate
+# Install dependencies using uv
+uv pip install .
 
-# On Windows PowerShell, execute the displayed command:
-# & "C:\your-folder\folder\AI-agents\.venv\Scripts\Activate.ps1"
-
-# Alternatively, run commands without activating the environment ("poetry run" prefix allows us run commands in virtual env) 
-poetry run python swarms/openai_swarm/main.py
+# Run the agent (example)
+python swarms/openai_swarm/main.py
 ```
-
-For a complete list of Poetry commands and options, refer to the [Poetry CLI documentation](https://python-poetry.org/docs/cli/).
 
 ### Using Traditional Virtual Environments
 
@@ -50,7 +49,7 @@ pip install -r requirements.txt
 
 # Run the agent
 python main.py
-```
+````
 
 ## Available Agents
 
