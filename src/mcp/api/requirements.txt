@@ -1,0 +1,6 @@
+    anthropic>=0.52.0
+    fastapi>=0.115.12
+    fastmcp>=2.4.0
+    pyngrok>=7.2.8
+    python-dotenv>=1.0.0
+    requests>=2.32.3
