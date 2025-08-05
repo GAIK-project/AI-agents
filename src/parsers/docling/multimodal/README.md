@@ -1,18 +1,6 @@
 # 🤖 Advanced PDF Parser with AI Image Analysis
 
-Advanced PDF parser using **Docling** + **Azure OpenAI GPT-4.1** with **Pydantic structured outputs**. Converts PDF files to enhanced Markdown with intelligent image analysis, automatic page numbering, and ## 📁 File Structure
-
-```text
-├── main_with_images.py      # Main parser with all features
-├── requirements.txt         # Dependencies  
-├── README.md               # This documentation
-├── .env                    # Azure credentials (create this)
-├── input/                  # Place PDF files here
-│   └── pdf-example.pdf     # Sample file
-└── output/                 # Generated markdown files
-    ├── pdf-example_inline.md     # Default output
-    └── pdf-example_enhanced.md   # Alternative format
-```rable output formatting.
+Advanced PDF parser using **Docling** + **Azure OpenAI GPT-4.1** with **Pydantic structured outputs**. Converts PDF files to enhanced Markdown with intelligent image analysis, automatic page numbering, and desi## 🔮 Future API Endpointrmatting.
 
 ## ✨ Features
 
@@ -30,13 +18,31 @@ Advanced PDF parser using **Docling** + **Azure OpenAI GPT-4.1** with **Pydantic
 
 ### Environment Setup
 
+**Option 1: Using UV (recommended)**
+
 ```bash
 # Install UV (recommended package manager)
 pip install uv
 
 # Create environment and install dependencies
+# (ensure you are in the parsers/docling/multimodal directory)
 uv venv
 uv pip install -r requirements.txt
+```
+
+**Option 2: Using standard venv**
+
+```bash
+# Create virtual environment
+python -m venv myenv
+
+# Activate environment (Windows)
+myenv\Scripts\Activate.ps1
+# Or on Linux/Mac: source myenv/bin/activate
+
+# Install dependencies
+# (ensure you are in the parsers/docling/multimodal directory)
+pip install -r requirements.txt
 ```
 
 ## Azure OpenAI Configuration
@@ -62,7 +68,7 @@ result = parser.parse_pdf("input/document.pdf")
 # Check results
 if result['success']:
     print(f"✅ Processed {result['pages_processed']} pages")
-    print(f"🖼️ Analyzed {result['images_processed']} images") 
+    print(f"🖼️ Analyzed {result['images_processed']} images")
     print(f"📊 Found {result['tables_processed']} tables")
     print(f"📝 Output: {result['output_file']}")
 ```
@@ -102,20 +108,20 @@ Control exactly what appears in your markdown by editing templates. **Set any te
 FORMATTING_CONFIG = {
     # Page numbering
     "page_marker_template": "--- Page {page_num} ---",  # Empty = no page markers
-    
-    # Image formatting  
+
+    # Image formatting
     "image_wrapper_start": "<image>",                   # Opening tag
     "image_wrapper_end": "</image>",                    # Closing tag
     "image_title_template": "**Image {image_num}:**",   # Empty = no image titles
-    
+
     # Table formatting
     "table_header_template": "### Table {table_num}",   # Empty = no table headers
     "table_size_template": "**Size:** {rows} rows × {cols} columns",
-    
+
     # Section headers
     "images_section_header": "## 🖼️ Images and Figures",  # Empty = no section header
     "tables_section_header": "## 📊 Tables",
-    
+
     # Cleanup settings
     "max_consecutive_linebreaks": 2,         # Max consecutive line breaks allowed
     "normalize_whitespace": True,            # Remove trailing spaces
@@ -186,10 +192,11 @@ More content...
 --- Page 2 ---
 
 ### Table 1
+
 **Size:** 5 rows × 3 columns
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
-| Data...  | Data...  | Data...  |
+| Data... | Data... | Data... |
 ```
 
 ### With Minimal Configuration (Clean)
@@ -198,7 +205,7 @@ More content...
 ## Document Title
 
 <image>
-Text content: WORLD ECONOMIC FORUM  
+Text content: WORLD ECONOMIC FORUM
 Subject matter: Logo of the World Economic Forum organization
 </image>
 
@@ -238,40 +245,11 @@ Automatic cleanup includes:
 - 📐 Fixes spacing around headings and page markers
 - 🚫 Preserves code block formatting
 
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**No images found:**
-
-- Check if PDF contains embedded images
-- Verify `PROCESSING_CONFIG["process_images"] = True`
-
-**Azure API errors:**
-
-- Verify `.env` file contains correct credentials
-- Check Azure OpenAI deployment name (default: "gpt-4.1")
-- Monitor API rate limits
-
-**Large file errors:**
-
-- Increase `PROCESSING_CONFIG["max_pdf_size"]` if needed
-- Check file corruption
-
-### Debug Logging
-
-Enable detailed logging by setting log level:
-
-```python
-import logging
-logging.basicConfig(level=logging.DEBUG)
-```
-
 ## � File Structure
 
 ```
 ├── main_with_images.py      # Main parser with all features
-├── requirements.txt         # Dependencies  
+├── requirements.txt         # Dependencies
 ├── README.md               # This documentation
 ├── .env                    # Azure credentials (create this)
 ├── input/                  # Place PDF files here
@@ -284,14 +262,3 @@ logging.basicConfig(level=logging.DEBUG)
 ## 🔮 Future API Endpoint
 
 This parser is designed to be easily converted to an API endpoint. The structured configuration and return values make it perfect for web service integration.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Make changes to configuration or features
-3. Test with different PDF files
-4. Submit pull request
-
-## 📄 License
-
-[Add your license information here]

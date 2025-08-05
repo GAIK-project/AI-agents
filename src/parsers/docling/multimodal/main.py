@@ -5,7 +5,6 @@ A tool to parse PDF files with image analysis using Azure GPT-4o
 
 import base64
 import io
-import json
 import logging
 import os
 import re
@@ -412,8 +411,6 @@ class AdvancedPDFParser:
         Returns:
             Cleaned markdown content
         """
-        import re
-        
         content = markdown_content
         
         # Skip cleanup if content is too short
